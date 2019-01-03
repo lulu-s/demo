@@ -11,13 +11,15 @@ article{
 	margin-top: 8%;
 }
 .loginTitle{
-	font-size: 1rem;
-	width: 100%;
-	text-align: center;
-	padding: 3% 0 0 0;
+    font-size: 1rem;
+    width: 32%;
+    border-bottom: 2px solid #0d9ad2;
+    margin: 0 auto;
+    padding: 3% 0 1% 0;
 }
+/*表单*/
 form{
-	margin: 12% 0 0 0;
+	margin: 13% 0 0 0;
 }
 form > input[type="text"],
 form > input[type="password"]{
@@ -28,6 +30,16 @@ form > input[type="password"]{
 	padding: 0 0 0 10%;
 	margin: 0 0 5% 9%;
 }
+/*用户名 密码 logo*/
+.imgUser{
+	background: #fff url(../images/user.jpg) no-repeat;
+	background-position: 3.5% center;
+}
+.imgPassword{
+	background: #fff url(../images/password.jpg) no-repeat;
+	background-position: 3.5% center;
+}
+/*验证码*/
 .validateBox{
 	font-size: 0.8rem;
 	color: rgba(0,0,0,0.8);
@@ -52,12 +64,13 @@ form > input[type="password"]{
 .gainValidate:hover{
 	background: rgba(119,136,153,0.8);
 }
+/*登录按钮*/
 .loginButton{
 	border-radius: 3px;
 	background: rgb(30,144,255,1);
 	width: 80%;
 	height: 40px;
-	margin: 10% 0 0 9%;
+	margin: 8% 0 0 9%;
 	border: 0;
 	color: rgb(255,255,255,1);
 	font-size: 1rem;
@@ -65,6 +78,7 @@ form > input[type="password"]{
 .loginButton:hover{
 	background: rgb(30,144,255,0.8);
 }
+/*底部忘记密码、帮助*/
 ul{
 	margin: 8% 0 0 35%;
 }
