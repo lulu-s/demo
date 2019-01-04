@@ -202,9 +202,9 @@ ul li:first-child:hover{
 }
 
 @media (min-width: 700px) and (max-width: 999px){
-	body{
+/*	body{
 		background: black;
-	}
+	}*/
 	header{
 		width: 21%;
 		height: 100px;
