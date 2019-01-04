@@ -206,7 +206,7 @@ ul li:first-child:hover{
 		background: black;
 	}*/
 	header{
-		width: 21%;
+		width: 210px;
 		height: 100px;
 		margin: 0 auto;
 		color: rgba(255,255,255,1);
@@ -223,15 +223,15 @@ ul li:first-child:hover{
 	}
 	article{
 		background: rgba(255,255,255,0.7);
-		width: 50%;
-		height: 340px;
+		width: 38%;
+		height: 360px;
 		border-radius: 10%;
 		margin: 0 auto;
 		margin-top: 4%;
 	}
 	.loginTitle{
 	    font-size: 0.8rem;
-	    width: 34%;
+	    width: 105px;
 	    border-bottom: 2px solid #0d9ad2;
 	    margin: 0 auto;
 	    padding: 3% 0 1% 0;
@@ -257,14 +257,14 @@ ul li:first-child:hover{
 	/*底部忘记密码、帮助*/
 	ul{
 	    margin: 0 auto;
-	    width: 30%;
+	    width: 90px;
 	    margin-top: 20px;
 	}
 }
 
 @media (min-width: 0px) and (max-width: 699px){
 	header{
-		width: 42%;
+		width: 200px;
 		height: 100px;
 		margin: 0 auto;
 		color: rgba(255,255,255,1);
@@ -276,27 +276,27 @@ ul li:first-child:hover{
 	    width: 40%;
 	}
 	header span{
-		font: normal normal 700 1.1rem "黑体";
+		font: normal normal 700 1rem "黑体";
 		margin: 0 0 0 -3%;
 	}
 	article{
 		background: rgba(255,255,255,0.7);
-		width: 50%;
-		height: 310px;
+		width: 48%;
+		height: 330px;
 		border-radius: 10%;
 		margin: 0 auto;
 		margin-top: 7%;
 	}
 	.loginTitle{
 	    font-size: 0.8rem;
-	    width: 41%;
+	    width: 105px;
 	    border-bottom: 2px solid #0d9ad2;
 	    margin: 0 auto;
 	    padding: 3% 0 1% 0;
 	}
 	/*表单*/
 	form{
-		margin: 12% 0 0 0;
+		margin: 14% 0 0 0;
 	}
 	/*用户名 密码 logo*/
 	.imgUser, .imgPassword{
@@ -315,7 +315,7 @@ ul li:first-child:hover{
 	/*底部忘记密码、帮助*/
 	ul{
 	    margin: 0 auto;
-	    width: 38%;
+	    width: 90px;
 	    margin-top: 10px;
 	}
 	ul li{
