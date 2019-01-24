@@ -1,0 +1,17 @@
+/*全局设置*/
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-size: 62.5%;
+}
+a{
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+button{
+	cursor: pointer;
+}
