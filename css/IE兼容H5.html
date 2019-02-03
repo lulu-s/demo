@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		nav {
+			height: 100px;
+			background: pink;
+			/*IE认为H5标签是行级标签，行级不能设置宽高，要转换成块级*/
+			display: block;
+		}
+
+		header {
+			height: 100px;
+			background: orange;
+		}
+	</style>
+	<script type="text/javascript">
+		//第一种解决办法
+		document.createElement("nav");
+	</script>
+	<!-- 第二种解决办法 通过js插件兼容	IE/第三种通过注释，仅限IE加载  lte 小于等于-->
+	<!--[if lte IE 8]>
+		<script type="text/javascript" src="js/html5shiv.js"></script>
+	<![endif]-->
+
+	
+</head>
+<body>
+	<header>IE</header>
+	<nav>IE认为我是自定义标签</nav>
+</body>
+</html>

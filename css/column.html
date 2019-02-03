@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>多列</title>
+	<style type="text/css">
+		.outer {
+		  resize: vertical;
+		  border: 1px solid black;
+		  width: 1000px;
+		  height: 800px;
+		  overflow: auto;
+		}
+		.inner {
+		  /*column-count: 3;*/
+		  /*column-gap: 60px;*/
+		  columns: 30px 4;
+		  column-rule: 3px solid red;
+		  /*column-width: 100px;*/
+		  /*resize: vertical;*/
+		  
+		  width: 800px;
+		  height: 500px;
+		  border: 1px solid black;
+		}
+		h2 {
+		  /*column-span: all;*/
+		  margin: 20px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<h2>成品油价格25日凌晨上调 汽柴油涨300、290元/吨</h2>
+		<div class="inner">此次国内成品油价格调整幅度，是按照现行国内成品油价格形成机制，根据国际市场油价变化情况确定的。去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前景向好以及中东局势持续动荡等因素影响，国际市场原油价格先抑后扬，2月上旬WTI和布伦特原油期货价格再次回升至每桶95美元和115美元以上。虽然近两日价格有所回落，但国内油价挂钩的国际市场三种原油连续22个工作日移动平均价格上涨幅度已超过4%，达到国内成品油价格调整的边界条件。</div>
+	</div>
+</body>
+</html>
