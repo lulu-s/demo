@@ -1,0 +1,324 @@
+body{
+	background: url(../images/背景.jpg) no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+header{
+	width: 20%;
+	height: 100px;
+	margin: 0 auto;
+	color: rgba(255,255,255,1);
+}
+header img{
+    position: relative;
+    top: 25%;
+    left: 3%;
+	max-width: 63px;
+	max-height: 88px;
+}
+header span{
+	font: normal normal 700 1.3rem "黑体";
+	margin: 0 0 0 -3%;
+}
+article{
+	background: rgba(255,255,255,0.7);
+	width: 30%;
+	height: 400px;
+	border-radius: 10%;
+	margin: 0 auto;
+	margin-top: 3%;
+}
+.loginTitle{
+    font-size: 1rem;
+    width: 32%;
+    border-bottom: 2px solid #0d9ad2;
+    margin: 0 auto;
+    padding: 3% 0 1% 0;
+}
+/*表单*/
+form{
+	margin: 13% 0 0 0;
+}
+form > input[type="text"],
+form > input[type="password"]{
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.2);
+	width: 80%;
+	height: 40px;
+	padding: 0 0 0 10%;
+	margin: 0 0 5% 9%;
+}
+/*用户名 密码 logo*/
+.imgUser{
+	background: #fff url(../images/user.jpg) no-repeat;
+	background-position: 3.5% center;
+}
+.imgPassword{
+	background: #fff url(../images/password.jpg) no-repeat;
+	background-position: 3.5% center;
+}
+/*验证码*/
+.validateBox{
+	font-size: 0.8rem;
+	color: rgba(0,0,0,0.8);
+	margin: 0 0 0 10%;
+}
+.validate{
+	border-radius: 3px;
+	padding: 0 0 0 10px;
+	width: 60px;
+	height: 30px;
+	background: rgba(255,255,255,0.5);
+	border: 1px solid rgba(0,0,0,0.2);
+}
+.gainValidate{
+	width: 25%;
+	height: 29px;
+	background: rgba(119,136,153,1);
+	color: rgb(255,255,255,1);
+	border-radius: 3px;
+	border: 0;
+}
+.gainValidate:hover{
+	background: rgba(119,136,153,0.8);
+}
+/*登录按钮*/
+.loginButton{
+	border-radius: 3px;
+	background: rgb(30,144,255,1);
+	width: 80%;
+	height: 40px;
+	margin: 8% 0 0 9%;
+	border: 0;
+	color: rgb(255,255,255,1);
+	font-size: 1rem;
+}
+.loginButton:hover{
+	background: rgb(30,144,255,0.8);
+}
+/*底部忘记密码、帮助*/
+ul{
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 20px;
+    height: 20px;
+}
+ul li{
+	float: left;
+	font-weight: 700;
+	color: rgba(119,136,153,1);
+	display: inline-block;
+    cursor: pointer;
+    padding: 0 0 0 3%;
+}
+ul li:last-child:hover{
+	color: rgb(30,144,255,1);
+}
+ul li:first-child:hover{
+	color: rgb(30,144,255,1);
+}
+
+@media (min-width: 1200px) and (max-width: 1330px){
+	header{
+	    margin-top: 1%;
+	    width: 18%;
+	}
+	header img{
+		position: relative;
+	    top: 25%;
+	}
+	header span{
+	font: normal normal 700 1.2rem "黑体";
+	margin: 0 0 0 -3%;
+	}
+	article{
+		height: 380px;
+	}
+	.loginTitle{
+	    font-size: 14px;
+	    width: 32%;
+	}
+	/*用户名 密码 logo*/
+	.imgUser, .imgPassword{
+		background-size: 8% 20px;
+	}
+	/*验证码*/
+	.gainValidate{
+		width: 25%;
+		font-size: 0.4rem;
+	}
+}
+
+
+@media (min-width: 1000px) and (max-width: 1199px){
+	header{
+		width: 21%;
+		height: 100px;
+		margin: 0 auto;
+		color: rgba(255,255,255,1);
+	}
+	header img{
+	    position: relative;
+	    top: 25%;
+	    left: 3%;
+	}
+	header span{
+		font: normal normal 700 1.1rem "黑体";
+		margin: 0 0 0 -3%;
+	}
+	article{
+		background: rgba(255,255,255,0.7);
+		width: 30%;
+		height: 340px;
+		border-radius: 10%;
+		margin: 0 auto;
+		margin-top: 4%;
+	}
+	.loginTitle{
+	    font-size: 0.8rem;
+	    width: 34%;
+	    border-bottom: 2px solid #0d9ad2;
+	    margin: 0 auto;
+	    padding: 3% 0 1% 0;
+	}
+	/*表单*/
+	form{
+		margin: 10% 0 0 0;
+	}
+	/*用户名 密码 logo*/
+	.imgUser, .imgPassword{
+		background-size: 7% 17px;
+	}
+	/*验证码*/
+	.gainValidate{
+		width: 24%;
+		height: 29px;
+		background: rgba(119,136,153,1);
+		color: rgb(255,255,255,1);
+		border-radius: 3px;
+		border: 0;
+		font-size: 0.8rem;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 999px){
+/*	body{
+		background: black;
+	}*/
+	header{
+		width: 210px;
+		height: 100px;
+		margin: 0 auto;
+		color: rgba(255,255,255,1);
+	}
+	header img{
+	    position: relative;
+	    top: 25%;
+	    left: 3%;
+	    width: 40%;
+	}
+	header span{
+		font: normal normal 700 1.1rem "黑体";
+		margin: 0 0 0 -3%;
+	}
+	article{
+		background: rgba(255,255,255,0.7);
+		width: 38%;
+		height: 360px;
+		border-radius: 10%;
+		margin: 0 auto;
+		margin-top: 4%;
+	}
+	.loginTitle{
+	    font-size: 0.8rem;
+	    width: 105px;
+	    border-bottom: 2px solid #0d9ad2;
+	    margin: 0 auto;
+	    padding: 3% 0 1% 0;
+	}
+	/*表单*/
+	form{
+		margin: 10% 0 0 0;
+	}
+	/*用户名 密码 logo*/
+	.imgUser, .imgPassword{
+		background-size: 7% 17px;
+	}
+	/*验证码*/
+	.gainValidate{
+		width: 24%;
+		height: 29px;
+		background: rgba(119,136,153,1);
+		color: rgb(255,255,255,1);
+		border-radius: 3px;
+		border: 0;
+		font-size: 0.8rem;
+	}
+	/*底部忘记密码、帮助*/
+	ul{
+	    margin: 0 auto;
+	    width: 90px;
+	    margin-top: 20px;
+	}
+}
+
+@media (min-width: 0px) and (max-width: 699px){
+	header{
+		width: 200px;
+		height: 100px;
+		margin: 0 auto;
+		color: rgba(255,255,255,1);
+	}
+	header img{
+	    position: relative;
+	    top: 25%;
+	    left: 3%;
+	    width: 40%;
+	}
+	header span{
+		font: normal normal 700 1rem "黑体";
+		margin: 0 0 0 -3%;
+	}
+	article{
+		background: rgba(255,255,255,0.7);
+		width: 48%;
+		height: 330px;
+		border-radius: 10%;
+		margin: 0 auto;
+		margin-top: 7%;
+	}
+	.loginTitle{
+	    font-size: 0.8rem;
+	    width: 105px;
+	    border-bottom: 2px solid #0d9ad2;
+	    margin: 0 auto;
+	    padding: 3% 0 1% 0;
+	}
+	/*表单*/
+	form{
+		margin: 14% 0 0 0;
+	}
+	/*用户名 密码 logo*/
+	.imgUser, .imgPassword{
+		background-size: 8% 17px;
+	}
+	/*验证码*/
+	.gainValidate{
+	    width: 28%;
+	    height: 29px;
+	    background: rgba(119,136,153,1);
+	    color: rgb(255,255,255,1);
+	    border-radius: 3px;
+	    border: 0;
+	    font-size: 0.5rem;
+	}
+	/*底部忘记密码、帮助*/
+	ul{
+	    margin: 0 auto;
+	    width: 90px;
+	    margin-top: 10px;
+	}
+	ul li{
+		font-size: 0.5rem;
+	}
+}
