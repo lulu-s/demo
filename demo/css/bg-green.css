@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+html {
+	font-size: 10px;
+}
+body {
+	background: green;
+}
+button {
+	background: #fff;
+	width: 8rem;
+	height: 30px;
+	margin: 1rem;
+	box-shadow: 0 0 5px #888;
+	color: #888;
+	font-weight: 700;
+	cursor: pointer;
+	outline: none;
+}
