@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button>隐藏</button>
+	<p></p>
+	<img src="images/pic1.jpg">
+</body>
+<script type="text/javascript">
+	var btn = document.querySelector("button");
+	var img = document.querySelector("img");
+	btn.onclick = ()=>{
+		if ( img.style.display == "none" ){
+			btn.innerHTML = "隐藏";
+			img.style.display = "inline";
+		} else {
+			btn.innerHTML = "显示";
+			img.style.display = "none";
+		}
+	}
+</script>
+</html>
