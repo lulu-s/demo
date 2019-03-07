@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#panel {
+			margin: 100px auto;
+			border: 1px solid #888;
+			box-shadow: 0 0 5px #888;
+			width: 400px;
+			padding: 20px;
+		}
+
+		#panel .panel-header,
+		#panel .panel-footer {
+			text-align: center;
+		}
+
+		#panel .panel-content {
+			margin: 10px auto;
+		}
+
+
+		
+	</style>
+</head>
+<body>
+	<div id="panel">
+		<div>
+			<section class="panel-header">
+				<h2>歌曲排行榜</h2>
+				<hr>
+			</section>
+			<section class="panel-content">
+				<input type="checkbox">1.时间都去哪了<br>
+				<input type="checkbox">2.海阔天空<br>
+				<input type="checkbox">3真的爱你<br>
+				<input type="checkbox">4.不再犹豫<br>
+				<input type="checkbox">5.光辉岁月<br>
+				<input type="checkbox">6.喜欢妳<br>
+				<input type="checkbox">7.偏偏喜欢你<br>
+				<input type="checkbox">8.爱拼才会赢<br>
+				<input type="checkbox">9.老街<br>
+			</section>
+			<section class="panel-footer">
+				<hr>
+				<button id="allSelect">全选</button>
+				<button id="cancelSelect">取消全选</button>
+				<button id="reversSelect">反选</button>
+			</section>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	// 封装id
+	function $(id) {
+		return typeof id === "string" ? document.getElementById(id) : null;
+	}
+
+	var allSelect = $("allSelect");
+	var cancelSelect = $("cancelSelect");
+	var reversSelect = $("reversSelect");
+
+	var panel = $("panel");
+	var checkboxs = panel.getElementsByTagName("input");
+
+	// 全选
+	allSelect.onclick = ()=>{
+		for (var i = 0; i < checkboxs.length; i++) {
+				checkboxs[i].checked = true;
+		}
+	}
+
+	// 取消全选
+	cancelSelect.onclick = ()=>{
+		for (var i = 0; i < checkboxs.length; i++) {
+				checkboxs[i].checked = false;
+		}
+	}
+
+	// 反选
+	reversSelect.onclick = ()=>{
+		for (var i = 0; i < checkboxs.length; i++) {
+			if (checkboxs[i].checked){
+				checkboxs[i].checked = false;
+			} else {
+				checkboxs[i].checked = true;
+			}
+		}
+	}
+
+</script>
+</html>

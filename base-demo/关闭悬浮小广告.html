@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html {
+			font-size: 10px;
+		}
+		body {
+			height: 200rem;
+		}
+		.advertising {
+			position: fixed;
+			right: 10px;
+			bottom: 10px;			
+		}
+		.advertising .QR-code {
+			width: 10rem;
+		}
+		.advertising .close {
+			width: 1.5rem;
+			position: absolute;
+			top: .7rem;
+			right: .7rem;
+			cursor: pointer;
+		}
+		.advertising .close:active .advertising{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="advertising">
+		<img src="images/img1.jpg" class="QR-code">
+		<img src="images/close.jpg" class="close">
+	</div>
+
+	<script type="text/javascript">
+		var close = document.querySelector(".close");
+		var advertising = document.querySelector(".advertising");
+		close.onclick = ()=>{
+			advertising.style.display = "none";
+		}
+	</script>
+</body>
+</html>

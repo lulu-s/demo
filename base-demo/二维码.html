@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#coder {
+			width: 50px;
+			height: 50px;
+			background: url(images/e_coder_normal.png) no-repeat center center;
+			position: fixed;
+			top: 40%;
+			cursor: pointer;
+			transition: background .2s;
+		}
+		#coder:hover {
+			background: url(images/e_coder_selected.png) no-repeat center center ;
+		}
+		#app{
+			position: absolute;
+			left: 50px;
+			top: -50px;
+			display: none;
+			transition: all .6s;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="coder">
+		<div id="app">
+			<img src="images/img1.jpg" alt="公众号" width="150">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var coder = document.getElementById("coder");
+	var app = document.getElementById("app");
+	coder.onmouseover = ()=>{
+		app.style.display = "block";
+	}
+	coder.onmouseout = ()=>{
+		app.style.display = "none";
+	}	
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			/*图片无缝连接*/
+			vertical-align: top;
+		}
+
+		body {
+			/*有宽高才有背景*/
+			background: url('images/002.jpg') no-repeat;
+			/*background-size: cover;*/
+			background-size: 100% auto;
+		}
+		#box {
+			background: rgba(255,255,255,.5);		
+		}
+		#box ul {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			cursor: pointer;
+		}
+		#box ul li img {
+			width: 180px;
+			height: 120px;
+
+			margin: 10px 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="images/001.jpg"></li>
+			<li><img src="images/002.jpg"></li>
+			<li><img src="images/003.jpg"></li>
+			<li><img src="images/004.jpg"></li>
+			<li><img src="images/005.jpg"></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var box = document.getElementById("box");
+	var liList = box.getElementsByTagName("li");
+
+	for (let i = 0; i < liList.length; i++) {
+
+		liList[i].onclick = function(){
+			console.log(i);
+			document.body.style.background = `url('images/00${i+1}.jpg') no-repeat`;
+			document.body.style.backgroundSize = `100% auto`;
+		}
+	}
+</script>
+</html>
