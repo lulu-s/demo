@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+</body>
+<script type="text/javascript">
+	var btn = document.getElementsByTagName("button");
+	for (var i = 0; i < btn.length; i++) {
+		// 闭包解决
+		(function(i){
+			btn[i].onclick =  ()=> {
+				alert(`第${i+1}个按钮`);
+			}
+		})(i)
+		// let i 解决
+
+		// btn.id = i;解决 存一个变量
+	}
+</script>
+</html>

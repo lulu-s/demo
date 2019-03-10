@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>发表评论</title>
+	<style type="text/css">
+		*{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box {
+        	width: 800px;
+        	border: 1px solid #ccc;
+        	margin: 50px auto;
+        	padding: 20px;
+        }
+        #box_textarea {
+        	width: 80%;
+        	height: 120px;
+        }
+
+        #ul{
+            margin: 0 80px;
+        }
+
+        #ul li{
+            border-bottom: 1px dashed #ccc;
+            color: red;
+            line-height: 44px;
+        }
+
+        #ul li a{
+            float: right;
+        }
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box-top">
+			<label>发表评论:</label>
+			<textarea id="box_textarea"></textarea>
+			<button id="btn">发表</button>
+		</div>
+		<!-- 评论楼层 -->
+		<ul id="ul">
+			
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+
+	var btn = $("btn");
+
+	btn.onclick = ()=>{
+		// 1.取得内容 判断内容是否为空
+		var textareaValue = $("box_textarea").value;
+		if(textareaValue.length === 0){
+			alert("请输入内容");
+			return false;
+		}
+		
+		// 2.清空内容
+		$("box_textarea").value = "";
+
+		// 3.将内容写入ul
+		// 3.1 创建li标签
+		var li = document.createElement("li");
+		// 3.2 内容写入到li
+		li.innerHTML = `${textareaValue} <a href="javascript:;">删除</a>`;
+		// 3.3 添加到ul内
+		// $("ul").appendChild(li);  //插入最后
+		// 插入li到ul的第一个之前
+		$("ul").insertBefore(li,$("ul").children[0]);
+
+
+		// 4.实现删除功能
+		var as = $("ul").getElementsByTagName("a");
+
+		for (let i = 0; i < as.length; i++) {
+
+			as[i].onclick = ()=> {
+				// 4.1获取父标签删除
+				as[i].parentNode.remove();
+			}
+		}
+
+	}
+
+
+	// 获取id
+	function $(id) {
+		return typeof id === "string" ? document.getElementById(id) : null;
+	}
+
+
+</script>
+</html>
