@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>侧边广告</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			border: 0;
+		}
+
+		section {
+			width: 100%;
+		}
+
+		section p {
+			padding: 10px;
+			text-align: center;
+		}
+
+		#aside {
+			width: 150px;
+/*			position: fixed;*/
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		#aside img {
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="aside">
+		<img src="images/float.jpg">
+	</div>
+	<section>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+		<p>你在看着我，看着我，目不转睛~~！</p>
+	</section>
+
+</body>
+<script src="js/myFun.js"></script>
+<script type="text/javascript">
+	var asideTop = $("aside").offsetTop;
+	console.log(asideTop);
+
+	var begin = 0, 
+		end = 0,
+		timer = null;
+
+	window.onscroll = ()=>{
+		// 清除定时器
+		clearInterval(timer);
+
+		var scrollTopAside = scroll().top;
+		end = asideTop + scrollTopAside;
+
+		// 缓动动画
+		timer = setInterval(()=>{
+			// 公式
+			begin = begin + (end - begin) * 0.2;
+			$("aside").style.top = `${begin}px`;
+
+			if (Math.round(begin) === end) {
+				clearInterval(timer);
+			}
+		},20);
+	}
+</script>
+</html>

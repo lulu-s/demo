@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>伪轮播</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+
+		#box {
+			width: 422px;
+			height: 297px;
+			border: 1px solid #ccc;
+
+			margin: 100px auto;
+			position: relative;
+		}
+
+		.left, .right {
+			width: 60px;
+			height: 297px;
+			float: left;
+		}
+
+		.center {
+			width: 300px;
+			height: 297px;
+			float: left;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+
+			overflow: hidden;
+		}
+
+		li {
+			line-height: 32px;
+			text-align: center;
+			border-bottom: 1px solid #ccc; 
+		}
+
+		.left li:last-child,
+		.right li:last-child {
+			border-bottom: none; 
+			line-height: 33px;
+		}
+
+		.left li:first-child {
+			background: red;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul class="left">
+			<li><a href="#">美食1</a></li>
+			<li><a href="#">美食2</a></li>
+			<li><a href="#">美食3</a></li>
+			<li><a href="#">美食4</a></li>
+			<li><a href="#">美食5</a></li>
+			<li><a href="#">美食6</a></li>
+			<li><a href="#">美食7</a></li>
+			<li><a href="#">美食8</a></li>
+			<li><a href="#">美食9</a></li>
+		</ul>
+		<div class="center">
+			<a href="#"><img src="images/img1.jpg"></a>
+			<a href="#"><img src="images/img2.jpg"></a>
+			<a href="#"><img src="images/img3.jpg"></a>
+			<a href="#"><img src="images/img4.jpg"></a>
+			<a href="#"><img src="images/img5.jpg"></a>
+			<a href="#"><img src="images/img6.jpg"></a>
+			<a href="#"><img src="images/img7.jpg"></a>
+			<a href="#"><img src="images/img8.jpg"></a>
+			<a href="#"><img src="images/img9.jpg"></a>
+			<a href="#"><img src="images/img10.jpg"></a>
+			<a href="#"><img src="images/img11.jpg"></a>
+			<a href="#"><img src="images/img12.jpg"></a>
+			<a href="#"><img src="images/img14.jpg"></a>
+			<a href="#"><img src="images/img15.jpg"></a>
+			<a href="#"><img src="images/img16.jpg"></a>
+			<a href="#"><img src="images/img17.jpg"></a>
+			<a href="#"><img src="images/img18.jpg"></a>
+			<a href="#"><img src="images/img19.jpg"></a>
+		</div>
+		<ul class="right">
+			<li><a href="#">美食10</a></li>
+			<li><a href="#">美食11</a></li>
+			<li><a href="#">美食12</a></li>
+			<li><a href="#">美食13</a></li>
+			<li><a href="#">美食14</a></li>
+			<li><a href="#">美食15</a></li>
+			<li><a href="#">美食16</a></li>
+			<li><a href="#">美食17</a></li>
+			<li><a href="#">美食18</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		function $(id) {
+			return typeof id === "string" ? document.getElementById(id) : null;
+		}
+
+		var lis = document.getElementsByTagName('li');
+		var imgs = document.getElementsByTagName('img');
+
+		var timer = null,
+			loop = 0;		// 索引
+
+		clearInterval(timer);
+
+		timer = setInterval(()=>{
+			loop++;
+			loop %= 18;
+			// if(loop === 18){
+			// 	loop = 0;
+			// }
+
+			// 清空
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].style.background = "none";
+				imgs[i].style.display = "none";
+			}
+
+			// 本次轮播到的
+			lis[loop].style.background = "red";
+			imgs[loop].style.display = "inline-block";
+		},1000);
+	</script>
+</body>	
+</html>

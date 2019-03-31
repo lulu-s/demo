@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图标切换</title>
+</head>
+<body>
+	<img src="images/icon_01.png" id="img" />
+	<p></p>
+	<button id="prev">上一张</button>
+	<button id="next">下一张</button>
+</body>
+<script type="text/javascript">
+	// 不要随便起关键字做属性名
+	var next = document.getElementById("next");
+	var prev = document.getElementById("prev");
+	var img = document.getElementById("img");
+	
+	var maxIndex = 9, minIndex = 1, numIndex = minIndex;
+
+	prev.onclick = ()=>{	
+		if ( numIndex === minIndex ) {
+			numIndex = maxIndex;
+		} else {
+			numIndex--;
+		}		
+		img.src = `images/icon_0${numIndex}.png`;		
+	};
+
+	next.onclick = function(){
+
+
+		if ( numIndex == maxIndex ) {
+			numIndex = minIndex;
+		} else {
+			numIndex++;
+		}
+
+		img.src = `images/icon_0${numIndex}.png`;	
+
+	};
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>缓存动画</title>
+	<style type="text/css">
+		#box {
+			width: 90px;
+			height: 90px;
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">开始动画</button>
+	<div id="box"></div>
+
+	<script type="text/javascript">
+		// 物理学公式
+		// 缓动公式 ： 起始值 += (结束值 - 起始值) * 缓动系数
+
+		var timer = null,
+			begin = 0,		// 开始位置
+			target = 200; 	// 目标位置
+
+		// 动画开始
+		$("btn").onclick = ()=>{
+			// 重复执行,初始化
+			begin = 0;
+			$("box").style.marginLeft = `0px`;
+
+			clearInterval(timer);
+
+			timer = setInterval(()=>{
+				begin += (target - begin) * 0.2;
+
+				if(Math.round(begin) >= target){
+					begin = target;
+					clearInterval(timer);
+				}
+
+				$("box").style.marginLeft = `${begin}px`;
+
+			},100);
+		}
+
+		function $(id) {
+			return typeof id === "string" ? document.getElementById(id) : null;
+		}
+
+
+	</script>
+</body>
+</html>

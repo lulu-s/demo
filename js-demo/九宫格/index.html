@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>九宫格</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#top {
+			padding: 20px;
+		}
+
+		#bottom {
+			position: relative;
+		}
+
+		.box {
+			width: 220px;
+			height: 360px;
+			margin: 0 15px 15px 0;
+			background: #e8e8e8;
+		}
+
+		.box p:last-child {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="top">
+		<button>显示3列</button>
+		<button>显示4列</button>
+		<button>显示5列</button>
+	</div>
+	<div id="bottom">
+		<div class="box">
+			<img src="images/1.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/2.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/3.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/4.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/5.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/6.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/7.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/8.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/9.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/10.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/11.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/12.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/13.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/14.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+		<div class="box">
+			<img src="images/15.jpg">
+			<p>因为遇见你</p>
+			<p>孙怡邓伦牵手演绎刺绣奇缘</p>
+		</div>
+	</div>
+<script type="text/javascript">
+	var btns = document.getElementById("top").children;
+	var bottom = document.getElementById("bottom");
+
+	// console.log(btns);
+	// console.log(bottom);
+
+	// 监听按钮的点击 初级版本，代码冗余
+	// btns[0].onclick = ()=>{
+	// 	// 定义变量
+	// 	var boxW = 220,     // 盒子宽度
+	// 		boxH = 360,     // 盒子高度
+	// 		marginXY = 15,  // 上下间距
+	// 		allCols = 3;    // 列数
+
+	// 	// 遍历盒子
+	// 	for (var i = 0; i < bottom.children.length; i++) {
+	// 		// 求出当前盒子所在的行和列
+	// 		var row = parseInt(i / allCols);  // 行
+	// 		var cols = parseInt(i % allCols); // 列
+	// 		// console.log(`当前盒子在第${row}行，第${cols}列`);
+
+	// 		// 盒子的定位
+	// 		var currentBox = bottom.children[i];
+	// 		currentBox.style.position = "absolute";
+	// 		currentBox.style.left = cols * (boxW + marginXY) + `px`;
+	// 		currentBox.style.top = row * (boxH + marginXY) + `px`;
+	// 	}
+	// }
+
+	// btns[1].onclick = ()=>{
+	// 	// 定义变量
+	// 	var boxW = 220,     // 盒子宽度
+	// 		boxH = 360,     // 盒子高度
+	// 		marginXY = 15,  // 上下间距
+	// 		allCols = 4;    // 列数
+
+	// 	// 遍历盒子
+	// 	for (var i = 0; i < bottom.children.length; i++) {
+	// 		// 求出当前盒子所在的行和列
+	// 		var row = parseInt(i / allCols);  // 行
+	// 		var cols = parseInt(i % allCols); // 列
+	// 		// console.log(`当前盒子在第${row}行，第${cols}列`);
+
+	// 		// 盒子的定位
+	// 		var currentBox = bottom.children[i];
+	// 		currentBox.style.position = "absolute";
+	// 		currentBox.style.left = cols * (boxW + marginXY) + `px`;
+	// 		currentBox.style.top = row * (boxH + marginXY) + `px`;
+	// 	}
+	// }
+
+	// btns[2].onclick = ()=>{
+	// 	// 定义变量
+	// 	var boxW = 220,     // 盒子宽度
+	// 		boxH = 360,     // 盒子高度
+	// 		marginXY = 15,  // 上下间距
+	// 		allCols = 5;    // 列数
+
+	// 	// 遍历盒子
+	// 	for (var i = 0; i < bottom.children.length; i++) {
+	// 		// 求出当前盒子所在的行和列
+	// 		var row = parseInt(i / allCols);  // 行
+	// 		var cols = parseInt(i % allCols); // 列
+	// 		// console.log(`当前盒子在第${row}行，第${cols}列`);
+
+	// 		// 盒子的定位
+	// 		var currentBox = bottom.children[i];
+	// 		currentBox.style.position = "absolute";
+	// 		currentBox.style.left = cols * (boxW + marginXY) + `px`;
+	// 		currentBox.style.top = row * (boxH + marginXY) + `px`;
+	// 	}
+	// }
+
+	// 封装九宫格
+	function iFlex(allCols, parentNode) {
+		// 定义变量
+		var boxW = 220,     // 盒子宽度
+			boxH = 360,     // 盒子高度
+			marginXY = 15;  // 上下间距
+
+		// 遍历盒子
+		for (var i = 0; i < parentNode.children.length; i++) {
+			// 求出当前盒子所在的行和列
+			var row = parseInt(i / allCols);  // 行
+			var cols = parseInt(i % allCols); // 列
+			// console.log(`当前盒子在第${row}行，第${cols}列`);
+
+			// 盒子的定位
+			var currentBox = parentNode.children[i];
+			currentBox.style.position = "absolute";
+			currentBox.style.left = cols * (boxW + marginXY) + `px`;
+			currentBox.style.top = row * (boxH + marginXY) + `px`;
+		}		
+	}
+
+	// 发现3,4,5也是规律，可以进一步封装
+	// btns[0].onclick = ()=>{
+	// 	iFlex(3,bottom);
+	// }
+
+	// btns[1].onclick = ()=>{
+	// 	iFlex(4,bottom);
+	// }
+
+	// btns[2].onclick = ()=>{
+	// 	iFlex(5,bottom);
+	// }
+
+	for (let i = 0; i < btns.length; i++) {
+		btns[i].onclick = ()=>{
+			iFlex((3 + i),bottom);
+		}
+	}
+
+</script>
+</body>
+</html>

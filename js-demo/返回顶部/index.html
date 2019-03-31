@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>返回顶部</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			border: 0;
+		}
+
+		body {
+			background: #ccc;
+		}
+
+		section {
+			width: 100%;
+		}
+
+		section p {
+			padding: 10px;
+			text-align: center;
+		}
+
+		#top {
+			width: 40px;
+			position: fixed;
+			right: 10px;
+			bottom: 20px;
+			display: none;
+
+			cursor: pointer;
+		}
+
+		#top img {
+			width: 100%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="top">
+		<img src="images/top.png">
+	</div>
+	<section>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+		<p>今天天气不错</p>
+	</section>
+	
+</body>
+<script src="js/myFun.js"></script>
+<script type="text/javascript">
+	var topImg = $("top");
+	var begin = 0,
+		end = 0,
+		timer = null;
+	window.onscroll = ()=>{		
+		var scrollTop = scroll().top;
+
+		// 显示top图标
+		// if (scrollTop > 0) {
+		// 	topImg.style.display = "block";
+		// } else {
+		// 	topImg.style.display = "none";
+		// }
+		scrollTop > 0 ? show(topImg) : hidden(topImg);
+
+		begin = scrollTop;
+	}
+
+	// 监听点击
+	topImg.onclick = ()=>{
+		// 清空定时器
+		clearInterval(timer);
+
+		// 缓动动画
+		timer = setInterval(()=>{
+			begin = begin + (end - begin) / 20;
+			// 把内容滚动到指定坐标
+			window.scrollTo(0,begin);
+
+			// 清空定时器			
+			if (parseInt(begin) === end) {
+				clearInterval(timer);
+			}
+			console.log(begin,end);
+		},20);
+	}
+</script>
+</html>

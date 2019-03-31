@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>星星海特效</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		body {
+			background: #000;
+		}
+
+		span {
+			width: 30px;
+			height: 30px;
+			background: url("images/star.png") no-repeat;
+			/* 需要移动，所有要加定位 */
+			position: absolute;
+			/* 占满盒子 */
+			background-size: 100% 100%;
+			/* */
+			animation: flash 1s alternate infinite;
+		}
+
+		@keyframes flash {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+
+		span:hover {
+			transform: scale(3,3) rotate(180deg) !important;
+			transition: 1s;
+		}
+	</style>
+</head>
+<body>
+	<span></span>
+
+	<script type="text/javascript">
+		// 求出屏幕的尺寸
+		var screenW = document.documentElement.clientWidth;
+		var screenH = document.documentElement.clientHeight;
+
+		// 创建星星
+		for (var i = 0; i < 150; i++) {
+			var span = document.createElement("span");
+			document.body.appendChild(span);
+
+			// 随机坐标
+			var x = parseInt(Math.random() * screenW);
+			var y = parseInt(Math.random() * screenH);
+			span.style.left = `${x}px`;
+			span.style.top = `${y}px`;
+
+			// 随机缩放
+			var scale = Math.random() * 1.5;
+			span.style.transform = `scale(${scale},${scale})`;
+
+			// 随机频率
+			var rate = Math.random() * 1.5;
+			span.style.animationDelay = `${rate}s`;
+			
+		}
+
+
+	</script>
+</body>
+</html>

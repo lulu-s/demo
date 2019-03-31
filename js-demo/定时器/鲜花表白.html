@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>鲜花表白</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		body {
+			background: #000;
+			padding: 100px;
+			text-align: center;
+		}
+
+		#pic {
+			display: none;
+		}
+
+		#time {
+			color: red;
+			font-size: 100px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="time">5</div>
+	<img id="pic" src="images/flower.gif">
+
+	<script type="text/javascript">
+		function $(id) {
+			return typeof id === "string" ? document.getElementById(id) : null;
+		}
+
+		var timer = setInterval(()=>{
+			$("time").innerText -= 1;
+			if($("time").innerText === "0"){
+				clearInterval(timer);
+				$("time").style.display = "none";
+				$("pic").style.display = "inline-block";
+			}
+		},1000);
+	</script>
+</body>
+</html>

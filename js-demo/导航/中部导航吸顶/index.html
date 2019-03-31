@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>中部导航吸顶</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			border: 0;
+		}
+
+		img {
+			vertical-align: top;
+			width: 100%;
+		}
+
+		#main {
+			text-align: center;
+		}
+
+		#main img {
+			width: 70%;
+		}
+
+		.nav {
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<header><img src="images/top.png"></header>
+	<nav><img src="images/nav.png"></nav>
+	<div id="main">
+		<img src="images/body01.png">
+		<img src="images/body02.png">
+	</div>
+</body>
+<script src="js/myFun.js"></script>
+<script type="text/javascript">
+	// 导航前的高度
+	var topHeight = document.getElementsByTagName('header')[0].offsetHeight;
+	var nav = document.getElementsByTagName('nav')[0];
+	window.onscroll = ()=>{
+		// 滚动的长度
+		var scrollTopHeight = scroll().top;
+		console.log(scrollTopHeight);
+		if ( scrollTopHeight >= topHeight) {
+			nav.className = "nav";
+		} else {
+			nav.className = "";
+		}
+	}
+</script>
+</html>

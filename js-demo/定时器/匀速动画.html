@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>匀速动画</title>
+	<style type="text/css">
+		#box {
+			width: 90px;
+			height: 90px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="start">开始动画</button>
+	<div id="box"></div>
+
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		var start = document.getElementById('start');
+
+		var timer = null,
+			begin =0,		// 开始位置
+			step = 10,		// 步长
+			target = 199;	// 目标位置
+
+		start.onclick = ()=>{
+			// 重复执行,初始化
+			begin = 0;
+			box.style.marginLeft = `0px`;
+
+			clearInterval(timer);
+
+			timer = setInterval(()=>{
+				begin += step;
+
+				if(begin >= target){
+					begin = target;
+					clearInterval(timer);
+				}
+
+				// 第一种，绝对或绝对定位后改变定位后的left值
+				// 第二种，改变margin-left值
+				box.style.marginLeft = `${begin}px`;
+				console.log(box.style.marginLeft);
+			},100);
+		}
+
+
+	</script>
+</body>
+</html>

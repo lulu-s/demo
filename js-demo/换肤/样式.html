@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>更换样式</title>
+	<!-- 无背景 -->
+	<link rel="stylesheet" type="text/css" href="css/bg-none.css" id="css">
+</head>
+<body>
+	<button id="btn">一键换肤</button>
+
+	<script type="text/javascript">
+		var btn = document.getElementById("btn");
+		// 库
+		var bgs = [
+			"bg-green", 
+			"bg-pink",
+			"bg-yello"
+		];
+
+		// 一键换肤
+		btn.onclick = (function(){
+			
+			// 随机数
+			var rand = Math.floor(Math.random() * (this.bgs.length));		
+			// var bg = this.bgs.slice(rand,1)[0];
+			console.log("rand" + rand);
+
+			// 获取随机背景
+			var link_css = document.getElementById("css");	
+
+			// 设置随机背景
+			link_css.href = `css/${this.bgs[rand]}.css`;
+
+			// 保存到本地
+			this.setStorage(`href`,link_css.href);
+
+		}).bind(this);
+
+		// 存储本地
+		function setStorage(name,href) {
+			window.localStorage.setItem(name,href);
+		}
+
+		// 获取本地
+		function getStorage(name) {
+			return window.localStorage.getItem(name);
+		}
+
+		// 检查本地是否存在皮肤
+		var cssStyle = getStorage(`href`);
+		var link = document.getElementById("css");	
+			
+		if( cssStyle && cssStyle != null) {
+			link.href = cssStyle;
+		} else {
+			link.href = `css/bg-pink.css`;
+		}
+
+	</script>
+</body>
+</html>

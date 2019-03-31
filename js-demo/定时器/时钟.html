@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时钟</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		#box {
+			width: 600px;
+			height: 600px;
+			background: url("images/clock.jpg") no-repeat;
+			margin: 10px auto;
+			position: relative;
+		}
+
+		#hour, #minute, #second {
+			width: 30px;
+			height: 600px;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			margin-left: -15px;
+		}
+
+		#hour {
+			background: url("images/hour.png") no-repeat;
+		}
+
+		#minute {
+			background: url("images/minute.png") no-repeat;
+		}
+
+		#second {
+			background: url("images/second.png") no-repeat;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="hour"></div>
+		<div id="minute"></div>
+		<div id="second"></div>
+	</div>
+
+	<script type="text/javascript">
+		function $(id) {
+			return typeof id === "string" ? document.getElementById(id) : null;
+		}
+
+		var hour = $("hour");
+		var minute = $("minute");
+		var second = $("second");
+
+		// 开启时钟定时器
+		setInterval(time,1000);
+
+		function time() {
+			// 获取当前时间
+			var date = new Date();
+
+			// 获取当前时间的毫秒数
+			var mills = date.getMilliseconds();
+
+			var s = date.getSeconds() + mills / 1000;
+			var m = date.getMinutes() + s / 60;
+			var h = date.getHours() % 12 + m / 60; // 时钟都是12进制的
+
+			// 旋转
+			hour.style.transform = `rotate(${h*30}deg)`;
+			minute.style.transform = `rotate(${m*6}deg)`;
+			second.style.transform = `rotate(${s*6}deg)`;
+		}
+
+		// 初始化
+		time();
+	</script>
+</body>
+</html>

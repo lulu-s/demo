@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>长图滚动</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+
+		#box {
+			width: 750px;
+			height: 400px;
+			border: 1px solid brown;
+			margin: 100px auto;
+
+			overflow: hidden;
+			position: relative;
+		}
+
+		#pic {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		#to_top,#to_bottom {
+			width: 100%;
+			height: 50%;
+			/*background: greenyellow;*/
+			cursor: pointer;		
+		}
+
+		#to_top {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		#to_bottom {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img id="pic" src="images/timg.jpg">
+		<span id="to_top"></span>
+		<span id="to_bottom"></span>
+	</div>
+
+	<script type="text/javascript">
+		function $(id) {
+			return typeof id === "string" ? document.getElementById(id) : null;
+		}
+
+		var box = $("box");
+		var pic = $("pic");
+		var to_top = $("to_top");
+		var to_bottom = $("to_bottom");
+
+		var timer = null,
+		    num = 0;
+
+		to_top.onmouseover = ()=>{
+			clearInterval(timer);
+
+			timer = setInterval(()=>{
+				// 步长
+				num -= 5;
+				
+				// 判断不能滚动出界，图片高度-盒子高度 = 最大高度
+				if (num >= -2466){
+					pic.style.top =`${num}px`;
+				} else {
+					clearInterval(timer);
+				}
+
+			},30);
+		}
+
+		to_bottom.onmouseover = ()=>{
+			clearInterval(timer);
+
+			timer = setInterval(()=>{
+				// 步长
+				num += 5;
+				
+				// 判断不能滚动出界，图	片高度-盒子高度 = 最大高度
+				if (num <= 0){
+					pic.style.top =`${num}px`;
+				} else {
+					clearInterval(timer);
+				}
+
+			},30);
+		}
+
+		box.onmouseout = ()=>{
+			clearInterval(timer);
+		}
+
+		
+
+	</script>
+</body>
+</html>

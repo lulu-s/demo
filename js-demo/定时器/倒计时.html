@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>抢购倒计时</title>
+	<style type="text/css">
+		#time {
+			font-size: 40px;
+			color: red;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">距离放假还有0-388天0-9小时0-50分钟0-43秒</div>
+
+	<script type="text/javascript">
+		function $(id) {
+			return typeof id === "string" ? document.getElementById(id) : null;
+		}
+
+
+		// 自定义将来时间
+		var nextDate = new Date("2019/07/04 00:00:00");
+
+		// 开启定时器
+		var timer = setInterval(()=>{
+			// 获取现在时间
+			var nowDate = new Date();
+
+			// 获取时间戳
+			var nowTime = nowDate.getTime();
+			var nextTime = nextDate.getTime();
+			
+			// 剩下的时间戳
+			var allTime = nextTime - nowTime;
+			
+			// 转换成毫秒
+			var allSecond = parseInt(allTime / 1000);
+			
+
+			// 转换成日期
+			var allDate = new Date(allTime);
+			// console.log(allDate);
+
+			// 转换成日时分钟秒
+			var day = allDate.getDate(),
+			    hour = allDate.getHours(),
+			    minute = allDate.getMinutes(),
+			    second = allDate.getSeconds();
+
+
+			$("time").innerText = `距离放假还有${day}天${hour}小时${minute}分钟${second}秒`;
+
+		},1000);
+
+	</script>
+</body>
+</html>
