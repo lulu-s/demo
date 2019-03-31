@@ -48,6 +48,7 @@
 		// 求出屏幕的尺寸
 		var screenW = document.documentElement.clientWidth;
 		var screenH = document.documentElement.clientHeight;
+		var spanAll = document.getElementsByTagName('span')[0];
 
 		// 创建星星
 		for (var i = 0; i < 150; i++) {
@@ -55,8 +56,8 @@
 			document.body.appendChild(span);
 
 			// 随机坐标
-			var x = parseInt(Math.random() * screenW);
-			var y = parseInt(Math.random() * screenH);
+			var x = parseInt(Math.random() * screenW - spanAll.offsetWidth);
+			var y = parseInt(Math.random() * screenH - spanAll.offsetHeight);
 			span.style.left = `${x}px`;
 			span.style.top = `${y}px`;
 
