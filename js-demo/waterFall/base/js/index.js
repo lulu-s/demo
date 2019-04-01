@@ -30,7 +30,7 @@ window.onscroll = ()=>{
 			newPic.appendChild(newImg);		
 		}
 
-		waterFull("main", "box");
+		waterFall("main", "box");
 	}
 }
 
@@ -41,7 +41,7 @@ window.onscroll = ()=>{
  * @param child  子盒子class
  * @return {null}
  */
-function waterFull(parent, child) {
+function waterFall(parent, child) {
 
 	// 1.父盒子居中
 
