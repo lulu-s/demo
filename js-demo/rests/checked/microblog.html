@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>微博分享</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			border: 0;
+		}
+
+		#word {
+			width: 300px;
+			height: 300px;
+			margin: 100px;
+		}
+
+		img {
+			width: 26px;
+			height: 26px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<p id="word">
+		在新闻发生的第一时间，李克强就批示有关部门，要“以小窥大”，进一步考虑如何通过简政放权、放管结合、优化服务，破除制约社会生产力发展和就业创业的不合理束缚，以主动服务的精神激发市场活力。而11月21日在上海召开的座谈会上，总理再次通过两家小食店的故事“以小窥大”，点题下一阶段政府职能转变和深化“放管服”改革工作。
+	</p>
+	<img src="images/share.gif" id="weibo">
+</body>
+<script src="js/myFun.js"></script>
+<script type="text/javascript">
+	var weibo = $("weibo");
+	var selectedText;
+	// 鼠标抬起
+	$("word").onmouseup = (event)=>{
+		var event = event || window.event;	
+		selectedText = checked();
+		console.log(selectedText);
+		if (selectedText !== "") {	
+			weibo.style.display = "inline-block";
+			weibo.style.left = `${event.clientX + 5}px`;
+			weibo.style.top = `${event.clientY + 5}px`;
+		}	
+	}
+	// 鼠标按下
+	document.onmousedown = (event)=>{
+		var event = event || window.event;	
+		var targetId = event.target ? event.target.id : event.srcElement.id;
+		if (targetId !== "weibo") {
+			$("weibo").style.display = "none";
+		} else {
+			window.location.href = `http://v.t.sina.com.cn/share/share.php?searchPic=false&title=${selectedText}&url=https://github.com/lulu-s`;
+		}
+
+		// 防止拖拽时选中代码
+		noChecked();
+	}
+</script>
+</html>
