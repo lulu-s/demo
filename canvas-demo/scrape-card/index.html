@@ -56,8 +56,9 @@
                     })
                     // 手指滑动的时候画圆
                     canvas.addEventListener('touchmove',(event)=>{
+                        e.preventDefault();
                         circle(event);
-                    })
+                    }, {passive: false})//passive 参数不能省略，用来兼容ios和android
                 }
             }
 
