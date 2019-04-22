@@ -1,5 +1,5 @@
 // 实现瀑布流布局
-waterFull("main", "box");
+waterFall("main", "box");
 
 // 滚动到最后的时候增加图片
 var timerScroll = null;
