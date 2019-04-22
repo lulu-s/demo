@@ -3,7 +3,7 @@
 
 * 页面布局
   * [单列](https://lulu-s.github.io/demo/layout/single-row.html) 内容弹性
-  * [两列](https://lulu-s.github.io/demo/layout/two-columns.html) float
+  * [两列](https://lulu-s.github.io/demo/layout/two-columns.html) float,左侧定宽，右侧自适应
 
 * canvas练习demo
   * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas-demo/scrape-card)
