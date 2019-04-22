@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>单列布局</title>
+    <title>两列布局-浮动</title>
     <style>
         * {
             margin: 0;
@@ -23,6 +23,17 @@
             line-height: 100px;
             margin: 0 auto;
         }
+        section .left {
+            float: left;
+            width: 200px;
+            height: 100%;
+            background: lightslategray;
+        }
+        section .right {
+            margin-left: 200px;
+            height: 100%;
+            background: green;
+        }
         footer {
             height: 100px;
             width: 80%;
@@ -37,7 +48,12 @@
         <h1>header</h1>
     </header>
     <section>
-        <h1>content</h1>
+        <aside class="left">
+            <h1>left</h1>
+        </aside>
+        <article class="right">
+            <h1>right</h1>
+        </article>
     </section>
     <footer>
         <h1>footer</h1>
@@ -72,7 +88,6 @@
         let timer = null;
         // 修正內容大小
         function resize() {           
-            content.style.lineHeight = `${client().height - 200}px`;
             content.style.height = `${client().height - 200}px`;           
         }
         // 頁面大小更改時發生變化
