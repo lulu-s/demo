@@ -70,20 +70,17 @@
 
         let content = document.querySelector("section");
         let timer = null;
-
         // 修正內容大小
         function resize() {           
             content.style.lineHeight = `${client().height - 200}px`;
             content.style.height = `${client().height - 200}px`;           
         }
-
         // 頁面大小更改時發生變化
         window.onresize = ()=>{
             resize();                  
         }
         // 初始大小
         resize();
-
     </script>
 </body>
 </html>

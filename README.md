@@ -1,7 +1,8 @@
 # demo exercise
 
 
-* [非自适应的登录界面](https://lulu-s.github.io/demo/login/login.html)  
+* 页面布局
+  * 单列
 
 * canvas练习demo
   * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas-demo/scrape-card)
