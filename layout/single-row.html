@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            height: 100px;
+            width: 100%;
+            background: lightcoral;
+            line-height: 100px;
+        }
+        section {
+            width: 80%;
+            background: lightgreen;
+            line-height: 100px;
+            margin: 0 auto;
+        }
+        footer {
+            height: 100px;
+            width: 80%;
+            background: lightseagreen;
+            line-height: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>header</h1>
+    </header>
+    <section>
+        <h1>content</h1>
+    </section>
+    <footer>
+        <h1>footer</h1>
+    </footer>
+    <script>
+       /*
+        * 获取可视区域的的宽度和高度
+        * client().width client().height
+        * @returns {*}
+        */
+        function client() {
+            // IE9+最新浏览器
+            if (window.innerWidth) {
+                return {
+                    width : window.innerWidth,
+                    height : window.innerHeight
+                }
+            } else if (document.compatMode === "CSS1Compat") { // W3C
+                return {
+                    width : document.documentElement.clientWidth,
+                    height : document.documentElement.clientHeight
+                }
+            } else {
+                return {
+                    width : document.body.clientWidth,
+                    height : document.body.clientHeight
+                } 		
+            }
+        }
+
+        let content = document.querySelector("section");
+        let timer = null;
+
+        // 修正內容大小
+        function resize() {           
+            content.style.lineHeight = `${client().height - 200}px`;
+            content.style.height = `${client().height - 200}px`;           
+        }
+
+        // 頁面大小更改時發生變化
+        window.onresize = ()=>{
+            resize();                  
+        }
+        // 初始大小
+        resize();
+
+    </script>
+</body>
+</html>

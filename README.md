@@ -3,6 +3,9 @@
 
 * [非自适应的登录界面](https://lulu-s.github.io/demo/login/login.html)  
 
+* canvas练习demo
+  * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas-demo/scrape-card)
+
 * JS练习demo
   * [瀑布流](https://lulu-s.github.io/demo/js-demo/waterFall/upgrades)
   * [放大镜](https://lulu-s.github.io/demo/js-demo/magnifyingGlass)
