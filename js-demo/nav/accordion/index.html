@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手风琴</title>
+    <style>
+        ul {
+            width: 600px;
+            height: 300px;
+            margin: 100px auto;
+            list-style: none;         
+            cursor: pointer;
+        }
+        li {
+            width: 20%;
+            float: left;
+            overflow: hidden;
+            transition: all .7s;
+            opacity: .9;
+        }
+        
+        /* ul:hover li:not(:hover) { */
+        ul:hover li {
+            width: 8%;
+           
+        }
+        ul li:hover {
+            width: 68%;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>
+    </ul>
+</body>
+</html>
