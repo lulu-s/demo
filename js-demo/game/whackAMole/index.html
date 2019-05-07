@@ -162,10 +162,8 @@
 
             // 判断是否点击正确
             imgs[random].onclick = function () {
-                if (this.style.display === "block") {
-                    num.innerHTML++;
-                    grade.innerHTML = parseInt(grade.innerHTML)+5;
-                }              
+                num.innerHTML++;
+                grade.innerHTML = parseInt(grade.innerHTML)+5;                         
             }
 
             // 0.6秒后消失
