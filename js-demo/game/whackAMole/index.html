@@ -157,18 +157,22 @@
 
         // 随机出现一只
         function diglett() {
+            var flag = false;
             random = parseInt(Math.random()*16);
             imgs[random].style.display = "block";
 
             // 判断是否点击正确
             imgs[random].onclick = function () {
-                num.innerHTML++;
-                grade.innerHTML = parseInt(grade.innerHTML)+5;                         
+                if ( !flag ) {
+                    num.innerHTML++;
+                    grade.innerHTML = parseInt(grade.innerHTML)+5;
+                }                                        
             }
 
             // 0.6秒后消失
             setTimeout(()=>{
                 imgs[random].style.display = "none";
+                flag = true;
             },800)
         }
 
