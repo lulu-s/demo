@@ -20,7 +20,7 @@
   * [选项卡](https://lulu-s.github.io/demo/js-demo/tab)
   * [点名册](https://lulu-s.github.io/demo/js-demo/timer/rollBook.html)
   * [时钟](https://lulu-s.github.io/demo/js-demo/timer/clock.html)
-  * [打地鼠](https://lulu-s.github.io/demo/js-demo/game/whackAMole.html)
+  * [打地鼠](https://lulu-s.github.io/demo/js-demo/game/whackAMole)
 
 * **页面布局**
   * [单列布局](https://lulu-s.github.io/demo/layout/single-row.html) 内容高度弹性
