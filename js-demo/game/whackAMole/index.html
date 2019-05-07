@@ -118,9 +118,10 @@
     </section>
 
     <script>
+        var tds = document.getElementsByTagName("td");
         var imgs = document.getElementsByTagName("img");
-        var end = $("end");
-        var regu = $("regulation");
+        var end = $("end");           // 结束提示
+        var regu = $("regulation");   // 开始提示
 
         var start = $("start"),       // 开始按钮
             second = $("second"),     // 秒
@@ -133,12 +134,23 @@
 
         // 当点击开始
         start.onclick = ()=>{      
-            regu.style.display = "none";   
-            if (second.innerHTML != 60) {
+            // 隐藏游戏提示
+            regu.style.display = "none";  
+            end.style.display = "none"; 
+
+            // 初始化时间
+            second.innerHTML = 60;
+
+            // 初始化积分
+            grade.innerHTML = num.innerHTML = 0;
+
+            // 判断游戏是否开始
+            if (second.innerHTML != 60 && second.innerHTML != 0) {
                 alert("游戏进行中，请勿重新开始");
             } else {
+                // 游戏开始
                 timer = setInterval(()=>{
-                    // 倒计时
+                    // 60s倒计时
                     second.innerHTML--;
                                 
                     // 随机出现一只
@@ -146,7 +158,9 @@
 
                     // 时间停止
                     if (second.innerHTML == 0) {
+                        // 隐藏最后一只
                         imgs[random].style.display = "none";
+                        // 显示结果
                         end.style.display = "block";
                         result.innerHTML = grade.innerHTML;
                         clearInterval(timer);      
@@ -158,23 +172,24 @@
         // 随机出现一只
         function diglett() {
             // 防止多次点击分数意外增加
-            var flag = false;
+            var flag = 1;
             random = parseInt(Math.random()*16);
             imgs[random].style.display = "block";
 
             // 判断是否点击正确
             imgs[random].onclick = function () {
-                if ( !flag ) {
+                if ( flag === 1 ) {
+                    flag = 0;
+                    console.log(flag === 1);
                     num.innerHTML++;
                     grade.innerHTML = parseInt(grade.innerHTML)+5;
-                    flag = true;
                 }                                        
             }
 
             // 0.7秒后消失
             setTimeout(()=>{
                 imgs[random].style.display = "none";
-                flag = false;
+                flag = 1;
             },700)
         }
 
