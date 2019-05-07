@@ -166,13 +166,14 @@
                 if ( !flag ) {
                     num.innerHTML++;
                     grade.innerHTML = parseInt(grade.innerHTML)+5;
+                    flag = true;
                 }                                        
             }
 
             // 0.6秒后消失
             setTimeout(()=>{
                 imgs[random].style.display = "none";
-                flag = true;
+                flag = false;
             },800)
         }
 
