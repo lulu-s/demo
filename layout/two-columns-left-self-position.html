@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两列布局-左侧自适应</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            height: 100px;
+            width: 100%;
+            background: lightcoral;
+            line-height: 100px;
+        }
+        section {
+            width: 80%;
+            background: lightgreen;
+            line-height: 100px;
+            margin: 0 auto;
+            position: relative;
+        }
+        section .left {
+            margin-right: 300px;
+            height: 100%;
+            background: lightslategray;
+        }
+        section .right {
+            position: absolute;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: green;
+        }
+        footer {
+            height: 100px;
+            width: 80%;
+            background: lightseagreen;
+            line-height: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>header</h1>
+    </header>
+    <section>
+        <!-- 需要自适应的在前面 -->
+        <article class="right">
+            <h1>right</h1>
+        </article>
+        <aside class="left">
+            <h1>left</h1>
+            qqq
+        </aside>
+    </section>
+    <footer>
+        <h1>footer</h1>
+    </footer>
+    <script>
+       /*
+        * 获取可视区域的的宽度和高度
+        * client().width client().height
+        * @returns {*}
+        */
+        function client() {
+            // IE9+最新浏览器
+            if (window.innerWidth) {
+                return {
+                    width : window.innerWidth,
+                    height : window.innerHeight
+                }
+            } else if (document.compatMode === "CSS1Compat") { // W3C
+                return {
+                    width : document.documentElement.clientWidth,
+                    height : document.documentElement.clientHeight
+                }
+            } else {
+                return {
+                    width : document.body.clientWidth,
+                    height : document.body.clientHeight
+                } 		
+            }
+        }
+
+        let content = document.querySelector("section");
+        let timer = null;
+        // 修正內容大小
+        function resize() {           
+            content.style.height = `${client().height - 200}px`;           
+        }
+        // 頁面大小更改時發生變化
+        window.onresize = ()=>{
+            resize();                  
+        }
+        // 初始大小
+        resize();
+    </script>
+</body>
+</html>
