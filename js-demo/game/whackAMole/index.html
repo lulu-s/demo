@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>打地鼠</title>
     <style>
@@ -180,7 +180,6 @@
             imgs[random].onclick = function () {
                 if ( flag === 1 ) {
                     flag = 0;
-                    console.log(flag === 1);
                     num.innerHTML++;
                     grade.innerHTML = parseInt(grade.innerHTML)+5;
                 }                                        
@@ -199,6 +198,11 @@
             return typeof id === "string" ?  document.getElementById(id) : null;
         }
 
+        document.body.addEventListener('touchmove', function (e) {
+            stopPro(e);
+            e.stopPropagation();
+            e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+        }, {passive: false}); //passive 参数不能省略，用来兼容ios和android
     </script>
 </body>
 </html>
