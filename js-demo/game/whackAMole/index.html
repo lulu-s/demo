@@ -157,6 +157,7 @@
 
         // 随机出现一只
         function diglett() {
+            // 防止多次点击分数意外增加
             var flag = false;
             random = parseInt(Math.random()*16);
             imgs[random].style.display = "block";
@@ -174,7 +175,7 @@
             setTimeout(()=>{
                 imgs[random].style.display = "none";
                 flag = false;
-            },800)
+            },600)
         }
 
         
