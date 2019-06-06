@@ -67,14 +67,14 @@
 			// 获取当前时间的毫秒数
 			var mills = date.getMilliseconds();
 
-			var s = date.getSeconds() + mills / 1000;
-			var m = date.getMinutes() + s / 60;
-			var h = date.getHours() % 12 + m / 60; // 时钟都是12进制的
+			var s = date.getSeconds() / 60 * 360;
+			var m = date.getMinutes() / 60 * 360;
+			var h = date.getHours() / 12 * 360; 
 
 			// 旋转
-			hour.style.transform = `rotate(${h*30}deg)`;
-			minute.style.transform = `rotate(${m*6}deg)`;
-			second.style.transform = `rotate(${s*6}deg)`;
+			hour.style.transform = `rotate(${h}deg)`;
+			minute.style.transform = `rotate(${m}deg)`;
+			second.style.transform = `rotate(${s}deg)`;
 		}
 
 		// 初始化
