@@ -1,18 +1,20 @@
-# demo exercise
+# 🌈 测试demo
 
-* **canvas**
+
+## Canvas
 
   * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas/scrape-card)
   
 
-* **css**
+## CSS
 
   * [button](https://lulu-s.github.io/demo/css/button.html)
 
 
 
-* **JS**
+## JS
 
+  * [DeviceMotionEvent](https://lulu-s.github.io/demo/javascript/deviceMotion.html)
   * [瀑布流](https://lulu-s.github.io/demo/javascript/waterFall/upgrades)
   * [放大镜](https://lulu-s.github.io/demo/javascript/magnifyingGlass)
   * [星星海](https://lulu-s.github.io/demo/javascript/starry)
@@ -33,7 +35,7 @@
 <!-- * [点名册](https://lulu-s.github.io/demo/javascript/timer/rollBook.html) -->
 
 
-* **Layout**
+## Layout
 
   * [单列布局 ｜ 内容高度弹性](https://lulu-s.github.io/demo/layout/single-row.html) 
   * [两列布局 ｜ 左侧定宽，右侧自适应](https://lulu-s.github.io/demo/layout/two-columns-position.html) 
