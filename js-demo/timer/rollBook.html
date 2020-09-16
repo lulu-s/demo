@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>点名册</title>
 	<style type="text/css">
@@ -9,48 +10,50 @@
 
 		#name {
 			font-size: 20px;
-			margin-top: 20px; 
+			margin-top: 20px;
 		}
 	</style>
 </head>
+
 <body>
 	<button id="begin">开始点名</button>
 	<button id="end">结束点名</button>
 	<div id="name"></div>
 
-<script type="text/javascript">
-	// 是否需要？
-	window.onload = function () {
-		function $(id) {
-			return typeof id === "string" ? document.getElementById(id) : null;
+	<script type="text/javascript">
+		// 是否需要？
+		window.onload = function () {
+			function $(id) {
+				return typeof id === "string" ? document.getElementById(id) : null;
+			}
+
+
+			var begin = $("begin");
+			var end = $("end");
+			var name = $("name");
+
+			var timer = null;
+
+			var nameArr = ["王璐璐", "许晓凤", "李四", "六五", "谢依霖", "吴非", "苏明成", "苏明玉"];
+			name.innerText = nameArr[0];
+
+			begin.onclick = () => {
+				clearInterval(timer);
+
+				timer = setInterval(() => {
+					// 随机数
+					var index = parseInt(Math.random() * nameArr.length);
+
+					name.innerText = nameArr[index];
+
+				}, 100);
+			}
+
+			end.onclick = () => {
+				clearInterval(timer);
+			}
 		}
-
-
-		var begin = $("begin");
-		var end = $("end");
-		var name = $("name");
-
-		var timer = null;
-
-		var nameArr = ["王璐璐","许晓凤","李四","六五","谢依霖","吴非","苏明成","苏明玉"];
-		name.innerText = nameArr[0];
-
-		begin.onclick = ()=>{
-			clearInterval(timer);
-
-			timer = setInterval(()=>{
-				// 随机数
-				var index = parseInt(Math.random() * nameArr.length);
-
-				name.innerText = nameArr[index];
-
-			},100);
-		}
-
-		end.onclick = ()=>{
-			clearInterval(timer);
-		}
-	}
-</script>
+	</script>
 </body>
+
 </html>
