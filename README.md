@@ -2,31 +2,31 @@
 
 * **canvas**
 
-  * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas-demo/scrape-card)
+  * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas/scrape-card)
 
 
 * **JS**
 
-  * [瀑布流](https://lulu-s.github.io/demo/js-demo/waterFall/upgrades)
-  * [放大镜](https://lulu-s.github.io/demo/js-demo/magnifyingGlass)
-  * [星星海](https://lulu-s.github.io/demo/js-demo/starry)
-  * [音乐导航](https://lulu-s.github.io/demo/js-demo/nav/music) 学习中
-  * [照片墙](https://lulu-s.github.io/demo/js-demo/photos/photoWall)
-  * [旋转木马](https://lulu-s.github.io/demo/js-demo/whirligig) 学习中
-  * [换肤](https://lulu-s.github.io/demo/js-demo/skinPeeler/background.html)
-  * [时钟](https://lulu-s.github.io/demo/js-demo/timer/clock.html)
-  * [手风琴](https://lulu-s.github.io/demo/js-demo/nav/accordion/index.html)
-  * [打地鼠](https://lulu-s.github.io/demo/js-demo/game/whackAMole/index.html)
-  * [轮播图](https://lulu-s.github.io/demo/js-demo/timer/slideshow/index.html)
+  * [瀑布流](https://lulu-s.github.io/demo/javascript/waterFall/upgrades)
+  * [放大镜](https://lulu-s.github.io/demo/javascript/magnifyingGlass)
+  * [星星海](https://lulu-s.github.io/demo/javascript/starry)
+  * [音乐导航](https://lulu-s.github.io/demo/javascript/nav/music) 学习中
+  * [照片墙](https://lulu-s.github.io/demo/javascript/photos/photoWall)
+  * [旋转木马](https://lulu-s.github.io/demo/javascript/whirligig) 学习中
+  * [换肤](https://lulu-s.github.io/demo/javascript/skinPeeler/background.html)
+  * [时钟](https://lulu-s.github.io/demo/javascript/timer/clock.html)
+  * [手风琴](https://lulu-s.github.io/demo/javascript/nav/accordion/index.html)
+  * [打地鼠](https://lulu-s.github.io/demo/javascript/game/whackAMole/index.html)
+  * [轮播图](https://lulu-s.github.io/demo/javascript/timer/slideshow/index.html)
 
-<!-- * [九宫格](https://lulu-s.github.io/demo/js-demo/sudoku) -->
-<!-- * [选项卡](https://lulu-s.github.io/demo/js-demo/tab) -->
-<!-- * [返回顶部](https://lulu-s.github.io/demo/js-demo/returnTop) -->
-<!-- * [天猫弹性导航](https://lulu-s.github.io/demo/js-demo/nav/elasticity) -->
-<!-- * [中部导航吸顶](https://lulu-s.github.io/demo/js-demo/nav/ceiling) -->
-<!-- * [简易相册点击版](https://lulu-s.github.io/demo/js-demo/photos/photoalbum1) -->
-<!-- * [橱窗商品展示](https://lulu-s.github.io/demo/js-demo/progressBar/windowDisplay) -->
-<!-- * [点名册](https://lulu-s.github.io/demo/js-demo/timer/rollBook.html) -->
+<!-- * [九宫格](https://lulu-s.github.io/demo/javascript/sudoku) -->
+<!-- * [选项卡](https://lulu-s.github.io/demo/javascript/tab) -->
+<!-- * [返回顶部](https://lulu-s.github.io/demo/javascript/returnTop) -->
+<!-- * [天猫弹性导航](https://lulu-s.github.io/demo/javascript/nav/elasticity) -->
+<!-- * [中部导航吸顶](https://lulu-s.github.io/demo/javascript/nav/ceiling) -->
+<!-- * [简易相册点击版](https://lulu-s.github.io/demo/javascript/photos/photoalbum1) -->
+<!-- * [橱窗商品展示](https://lulu-s.github.io/demo/javascript/progressBar/windowDisplay) -->
+<!-- * [点名册](https://lulu-s.github.io/demo/javascript/timer/rollBook.html) -->
 
 
 * **页面布局**
