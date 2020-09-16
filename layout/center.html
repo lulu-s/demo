@@ -1,0 +1,186 @@
+<!--  第一种：不兼容i7及以下
+<!DOCTYPE html>
+<html>
+<head>
+	<title>水平垂直居中</title>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+		.outer {		
+			width: 500px;
+			height: 500px;		
+			position: relative;	
+		}
+		.inner {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html> -->
+
+<!-- 第二种：需要知道宽高
+<!DOCTYPE html>
+<html>
+<head>
+	<title>水平垂直居中</title>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+		.outer {		
+			width: 500px;
+			height: 500px;		
+			position: relative;	
+		}
+		.inner {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -25px;
+			margin-top: -25px;			
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html> -->
+
+
+<!--  第三种：使用2D变换中的平移倒退百分之五十，不需要先声明高度
+<!DOCTYPE html>
+<html>
+<head>
+	<title>水平垂直居中</title>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+		.outer {		
+			width: 500px;
+			height: 500px;		
+			position: relative;	
+		}
+		.inner {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);	
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html> -->
+
+
+<!-- 第四种：使用弹性盒 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>水平垂直居中</title>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+		.outer {		
+			width: 500px;
+			height: 500px;	
+			display: flex;
+			justify-content: center;
+			align-items: center;	
+		}
+		.inner {
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html>  -->
+
+
+<!-- 第五种：把父盒子看做单元格，对其内的元素进行操作，需要将子元素转换成内联块
+<!DOCTYPE html>
+<html>
+<head>
+	<title>水平垂直居中</title>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+		.outer {		
+			width: 500px;
+			height: 500px;	
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;	
+		}
+		.inner {
+			width: 50px;
+			height: 50px;
+			display: inline-block;			
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>水平垂直居中</title>
+	<style>
+		div {
+			border: 1px solid black;
+		}
+		.outer {		
+			width: 500px;
+			height: 500px;	
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;	
+		}
+		.inner {
+			width: 50px;
+			height: 50px;
+			display: inline-block;			
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html> 
