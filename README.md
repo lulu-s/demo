@@ -4,15 +4,18 @@
 
   * [移动端刮刮卡](https://lulu-s.github.io/demo/canvas/scrape-card)
 
+* **css**
+
+  * [button](https://lulu-s.github.io/demo/canvas/scrape-card)
+
+
 
 * **JS**
 
   * [瀑布流](https://lulu-s.github.io/demo/javascript/waterFall/upgrades)
   * [放大镜](https://lulu-s.github.io/demo/javascript/magnifyingGlass)
   * [星星海](https://lulu-s.github.io/demo/javascript/starry)
-  * [音乐导航](https://lulu-s.github.io/demo/javascript/nav/music) 学习中
   * [照片墙](https://lulu-s.github.io/demo/javascript/photos/photoWall)
-  * [旋转木马](https://lulu-s.github.io/demo/javascript/whirligig) 学习中
   * [换肤](https://lulu-s.github.io/demo/javascript/skinPeeler/background.html)
   * [时钟](https://lulu-s.github.io/demo/javascript/timer/clock.html)
   * [手风琴](https://lulu-s.github.io/demo/javascript/nav/accordion/index.html)
@@ -29,12 +32,10 @@
 <!-- * [点名册](https://lulu-s.github.io/demo/javascript/timer/rollBook.html) -->
 
 
-* **页面布局**
+* **Layout**
 
   * [单列布局](https://lulu-s.github.io/demo/layout/single-row.html) 内容高度弹性
   * [两列布局](https://lulu-s.github.io/demo/layout/two-columns-position.html) 左侧定宽，右侧自适应
   * [两列布局](https://lulu-s.github.io/demo/layout/two-columns-left-self-position.html) 左侧自适应，右侧定宽
   * [三列布局](https://lulu-s.github.io/demo/layout/three-row.html) 中间自适应
 
-
-🙃仅供个人日常练习记录
