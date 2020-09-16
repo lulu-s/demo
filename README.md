@@ -8,7 +8,7 @@
 
 ## CSS
 
-  * [button](https://lulu-s.github.io/demo/css/button.html)
+  * [button的简单样式](https://lulu-s.github.io/demo/css/button.html)
 
 
 
