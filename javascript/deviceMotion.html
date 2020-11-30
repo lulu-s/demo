@@ -7,6 +7,7 @@
 </head>
 <body>
 手机摇一摇，改变手机屏幕颜色。
+<p id="log"></p>
 <p id="c"></p>
 <p>x 方向</p>
 <p id="x"></p>
@@ -33,6 +34,7 @@
      */
     var colorArray = new Array('#fff', '#ff0', '#f0f', '#0ff', '#f00', '#0f0', '#00f', "#000");
     /**window.DeviceMotionEvent：判斷浏览器是否支持此时间*/
+    document.getElementById("log").append("cx:" + window.DeviceMotionEvent + "\r\n")
     if (window.DeviceMotionEvent) {
         /**
          * speed：速度，根据摇一摇的动作幅度可以适当增加或减小
@@ -48,6 +50,7 @@
          * listener：事件触发的回调函数，也可以提取出来单独写
          * useCapture：是否捕获
          * */
+        //document.getElementById("log").append("cx:" + window.DeviceMotionEvent + "\r\n")
         window.addEventListener('devicemotion', function (evenData) {
             /**获取重力加速度
              * x、y、z 三个属性，分别表示 3 个方向上的重力加速度
