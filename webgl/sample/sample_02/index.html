@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO 02</title>
+    <link rel="stylesheet" href="../canvas.css">
+    <script src="../../../js/gl-matrix.js"></script>
+</head>
+
+<body>
+    <script>
+        function main() {
+            var canvas = document.createElement('canvas');
+            document.body.appendChild(canvas)
+            var gl = canvas.getContext('webgl');
+
+            if (!gl) {
+                alert('无法初始化WebGL，你的浏览器、操作系统或硬件等可能不支持WebGL。')
+                return;
+            }
+
+            // 顶点着色器确定顶点，由 gl_position 返回计算后的点位
+            const vsSource = `
+                attribute vec4 aVertexPosition;
+
+                uniform mat4 uModelViewMatrix;
+                uniform mat4 uProjectionMatrix;
+
+                void main() {
+                    gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+                }
+            `;
+
+            // 片段着色器确定像素的颜色，由 gl_FragColor 返回绘制
+            const fsSource = `
+                void main() {
+                    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+                }
+            `;
+
+            const shaderProgram = initShaderProgram(gl, vsSource, fsSource);
+            const programInfo = {
+                program: shaderProgram,
+                attribLocations: {
+                    vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition')
+                },
+                uniformLocations: {
+                    projectionMatrix: gl.getUniformLocation(shaderProgram, 'uProjectionMatrix'),
+                    modelViewMatrix: gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'),
+                }
+            }
+
+            const buffers = initBuffer(gl);
+
+            drawScene(gl, programInfo, buffers);
+        }
+      
+
+        // 创建立方体buffer
+        function initBuffer(gl) {
+            const positionBuffer = gl.createBuffer(); // 创建buffer
+            gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer); // 绑定上下文？
+
+            var vertices = [ // 记录正方形的每一个顶点
+                1.0, 1.0, 0.0,
+                -1.0, 1.0, 0.0,
+                1.0, -1.0, 0.0,
+                -1.0, -1.0, 0.0
+            ]
+
+            gl.bufferData( // 创建顶点
+                gl.ARRAY_BUFFER,
+                new Float32Array(vertices),
+                gl.STATIC_DRAW
+            )
+
+            return {
+                position: positionBuffer
+            }
+
+        }
+
+        // 初始化着色器程序
+        function initShaderProgram(gl, vsSource, fsSource) {
+            const vertexShader = loadShader(gl, gl.VERTEX_SHADER, vsSource);
+            const fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+            // 创建着色器程序
+            const shaderProgram = gl.createProgram();
+            gl.attachShader(shaderProgram, vertexShader);
+            gl.attachShader(shaderProgram, fragmentShader);
+            gl.linkProgram(shaderProgram);
+
+            // 创建失败
+            if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+                alert('Unable to initialize the shader program: ' + gl.getProgramInfoLog(shaderProgram))
+            }
+
+            return shaderProgram;
+        }
+
+        // 创建指定类型的着色器，上传 source 源码并且编译 
+        function loadShader(gl, type, source) {
+            const shader = gl.createShader(type); // 创建 type 类型的 shader
+            gl.shaderSource(shader, source); // 上传 source
+            gl.compileShader(shader); // 编译 shader
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) { // 检测是否编译成功
+                alert('An error occurred compiling the shaders: ' + gl.getShaderInfoLog(shader));
+                gl.deleteShader(shader); // 失败删除
+                return null;
+            }
+            return shader;
+        }
+
+        function drawScene(gl, programInfo, buffers) {
+            // 清除画布前的配置？
+            gl.clearColor(0.0, 0.0, 0.0, 1.0);
+            gl.clearDepth(1.0) // 清除一切？
+            gl.enable(gl.DEPTH_TEST) // 开启深度测试
+            gl.depthFunc(gl.LEQUAL); // Near things obscure far things
+
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT) // 清除画布
+
+
+            // 创建摄像机 📹
+            const fieldOfView = 45 * Math.PI / 180; // 45deg
+            const aspect = gl.canvas.clientWidth / gl.canvas.clientHeight; // 比例
+            const zNear = 0.1;
+            const zFar = 100.0;
+            const projectionMatrix = mat4.create();
+
+            mat4.perspective(
+                projectionMatrix,
+                fieldOfView,
+                aspect,
+                zNear,
+                zFar
+            )
+
+            // 设置
+            var modelViewMatrix = mat4.create();
+
+            mat4.translate(
+                modelViewMatrix, // 加载特定位置，
+                modelViewMatrix,
+                [-0.0, -0.0, -6.0] // 并把正方形放在距离摄像机6个单位的的位置
+            )
+
+            {
+                // 绑定正方形的顶点缓冲到上下文，
+                const numComponents = 3;  // pull out 3 values per iteration
+                const type = gl.FLOAT;    // the data in the buffer is 32bit floats
+                const normalize = false;  // don't normalize
+                const stride = 0;         // how many bytes to get from one set of values to the next
+                // 0 = use type and numComponents above
+                const offset = 0;         // how many bytes inside the buffer to start from
+                gl.bindBuffer(gl.ARRAY_BUFFER, buffers.position);
+                gl.vertexAttribPointer(
+                    programInfo.attribLocations.vertexPosition,
+                    numComponents,
+                    type,
+                    normalize,
+                    stride,
+                    offset);
+                gl.enableVertexAttribArray(
+                    programInfo.attribLocations.vertexPosition);
+            }
+
+            // 使用程序
+            gl.useProgram(programInfo.program)
+
+            // 设置 uniform
+            gl.uniformMatrix4fv(
+                programInfo.uniformLocations.projectionMatrix,
+                false,
+                projectionMatrix
+            )
+            gl.uniformMatrix4fv(
+                programInfo.uniformLocations.modelViewMatrix,
+                false,
+                modelViewMatrix
+            )
+
+            const offset = 0;
+            const vertexCount = 4;
+            gl.drawArrays(gl.TRIANGLE_STRIP, offset, vertexCount);
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
