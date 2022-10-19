@@ -1,5 +1,3 @@
-// 实现瀑布流布局
-waterFull("main", "box");
 
 window.onscroll = ()=>{
 	if(checkWillLoadImage("box")){
@@ -86,6 +84,10 @@ function waterFall(parent, child) {
 	}
 	console.log(heightArr, minBoxHeight, index);
 }
+
+// 实现瀑布流布局
+waterFall("main", "box");
+
 
 /*
  * 获取id

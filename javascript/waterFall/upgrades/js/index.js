@@ -1,5 +1,3 @@
-// 实现瀑布流布局
-waterFall("main", "box");
 
 // 滚动到最后的时候增加图片
 var timerScroll = null;
@@ -108,6 +106,10 @@ function waterFall(parent, child) {
 	}
 	// console.log(heightArr, minBoxHeight, index);
 }
+
+// 实现瀑布流布局
+waterFall("main", "box");
+
 
 /*
  * 获取id
