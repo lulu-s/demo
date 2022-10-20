@@ -27,7 +27,7 @@
 * [换肤](https://lulu-s.github.io/demo/javascript/skinPeeler/background.html)
 * [时钟](https://lulu-s.github.io/demo/javascript/timer/clock.html)
 * [手风琴](https://lulu-s.github.io/demo/javascript/nav/accordion/index.html)
-* [打地鼠](https://lulu-s.github.io/demo/javascript/game/whackAMole/index.html)
+* [打地鼠](https://lulu-s.github.io/demo/game/whackAMole/index.html)
 * [轮播图](https://lulu-s.github.io/demo/javascript/timer/slideshow/index.html)
 <!-- * [九宫格](https://lulu-s.github.io/demo/javascript/sudoku) -->
 <!-- * [选项卡](https://lulu-s.github.io/demo/javascript/tab) -->
@@ -38,10 +38,5 @@
 * [自定义进度条](https://github.com/lulu-s/demo/blob/master/javascript/progressBar/%E6%8B%96%E6%8B%BD%E8%BF%9B%E5%BA%A6%E6%9D%A1.html)
 
 
-## Layout
-
-* [单列布局 ｜ 内容高度弹性](https://lulu-s.github.io/demo/layout/single-row.html) 
-* [两列布局 ｜ 左侧定宽，右侧自适应](https://lulu-s.github.io/demo/layout/two-columns-position.html) 
-* [两列布局 ｜ 左侧自适应，右侧定宽](https://lulu-s.github.io/demo/layout/two-columns-left-self-position.html) 
-* [三列布局 ｜ 中间自适应](https://lulu-s.github.io/demo/layout/three-row.html) 
-* [水平垂直居中的五种方式](https://lulu-s.github.io/demo/layout/center.html) 
+## Example
+* [example](https://github.com/lulu-s/demo/example.md)

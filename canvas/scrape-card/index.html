@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
@@ -11,21 +12,26 @@
             margin: 0;
             padding: 0;
         }
-        html, body {
+
+        html,
+        body {
             height: 100%;
             /* 禁止系统滚动条 */
             overflow: hidden;
         }
+
         #wrap {
             height: 100%;
             overflow: hidden;
         }
+
         #wrap div {
             height: 100%;
             background: url("images/timg.jpg") no-repeat;
             background-size: 100% 100%;
             background-attachment: fixed;
         }
+
         canvas {
             position: absolute;
             top: 0;
@@ -33,6 +39,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <div></div>
@@ -40,7 +47,7 @@
     </div>
     <script src="../../js/myFun.js"></script>
     <script>
-        window.onload = ()=>{
+        window.onload = () => {
             var canvas = document.querySelector("canvas");
             var event;
 
@@ -48,30 +55,30 @@
                 var ctx = canvas.getContext("2d");
                 var img = new Image();
                 img.src = "images/top.jpg";
-                img.onload = ()=>{
-                    ctx.drawImage(img,0,0,client().width,client().height);
+                img.onload = () => {
+                    ctx.drawImage(img, 0, 0, client().width, client().height);
                     // 手指点击的时候画圆
-                    canvas.addEventListener('touchstart',(event)=>{
+                    canvas.addEventListener('touchstart', (event) => {
                         circle(event);
                     })
                     // 手指滑动的时候画圆
-                    canvas.addEventListener('touchmove',(event)=>{                       
+                    canvas.addEventListener('touchmove', (event) => {
                         circle(event);
                     })
                 }
             }
 
-            function circle(event){
+            function circle(event) {
                 event = event || window.event;
                 // 拿到一根手指
                 var touchC = event.changedTouches[0];
                 var x = touchC.clientX;
-                var y = touchC.clientY;              
+                var y = touchC.clientY;
                 // 画个圆
                 ctx.save();
                 ctx.beginPath();
                 ctx.globalCompositeOperation = "destination-out";
-                ctx.arc(x,y,20,0,360*Math.PI/180);
+                ctx.arc(x, y, 20, 0, 360 * Math.PI / 180);
                 ctx.fill();
                 ctx.restore();
             }
@@ -80,10 +87,11 @@
                 stopPro(e);
                 e.stopPropagation();
                 e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
-            }, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+            }, { passive: false }); //passive 参数不能省略，用来兼容ios和android
 
 
         }
     </script>
 </body>
+
 </html>
